@@ -21,14 +21,14 @@ class BaseViewController: UIViewController {
 extension BaseViewController : UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .present
-        transition.startingPoint = CGPoint(x: 0, y: 0)
+        transition.startingPoint = self.view.center
         transition.bubbleColor = self.view.backgroundColor!
         return transition
     }
 
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .dismiss
-        transition.startingPoint = CGPoint(x: 0, y: 0)
+        transition.startingPoint = self.view.center
         transition.bubbleColor = self.view.backgroundColor!
         return transition
     }
